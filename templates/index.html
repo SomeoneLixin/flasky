@@ -1,13 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-    这是HTML中出现的文字
-    <p>用户名：{{ username }}</p>
-    <p>性别：{{ gender }}</p>
-    <p>年龄：{{ age }}</p>
-</body>
-</html>
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+    <!--<meta charset="UTF-8">-->
+    <!--<title>Title</title>-->
+<!--</head>-->
+<!--<body>-->
+    <!--这是HTML中出现的文字-->
+    <!--<p>用户名：{{ username }}</p>-->
+    <!--<p>性别：{{ gender }}</p>-->
+    <!--<p>年龄：{{ age }}</p>-->
+    <!--<p>The local date and time is {{ moment(current_time).format('LLL') }}.</p>-->
+    <!--<p>That was {{ moment(current_time).fromNow(refresh=True) }}</p>-->
+<!--</body>-->
+<!--</html>-->
+
+
+
+
+
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}Flasky - Index{% endblock %}
+{% block page_content %}
+    <div class="page-header">
+        <h1>Hello, {% if name %}{{ name }}{% else %}Stranger{% endif %}!</h1>
+    </div>
+{{ wtf.quick_form(form) }}
+{% endblock %}
